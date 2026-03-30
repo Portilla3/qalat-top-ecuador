@@ -1969,17 +1969,18 @@ document.getElementById('busq_codigo').addEventListener('input', function() {
 CORRECCION_URLS = {
     'Perú':    'https://portilla3.github.io/App-TOP-3-Paises/correccion_top_peru.html',
     'Ecuador': 'https://portilla3.github.io/App-TOP-3-Paises/correccion_top_ecuador.html',
+    'México':  'https://portilla3.github.io/App-TOP-3-Paises/correccion_top_mexico.html',
 }
-CORRECCION_FLAGS = {'Perú': '🇵🇪', 'Ecuador': '🇪🇨'}
+CORRECCION_FLAGS = {'Perú': '🇵🇪', 'Ecuador': '🇪🇨', 'México': '🇲🇽'}
 
 with tab_correccion:
-    if rol not in ('Perú', 'Ecuador', 'UNODC'):
+    if rol not in ('Perú', 'Ecuador', 'México', 'UNODC'):
         st.info(f'El formulario de corrección para {flag} {rol} estará disponible próximamente.')
     else:
         if es_unodc:
             pais_corr = st.selectbox(
                 'Corregir registros de:',
-                ['Perú', 'Ecuador'],
+                ['Perú', 'Ecuador', 'México'],
                 key='corr_pais_sel'
             )
         else:
