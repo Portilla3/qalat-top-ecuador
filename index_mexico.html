@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QALAT — Formulario TOP · Ecuador</title>
+<title>QALAT — Formulario TOP · México</title>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -21,331 +21,140 @@
     --sombra:     0 2px 8px rgba(26,58,92,.13);
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   body {
     font-family: 'IBM Plex Sans', sans-serif;
     background: linear-gradient(160deg, #1a3a5c 0%, #2563a8 40%, #3b82c4 70%, #dbeafe 100%);
     background-attachment: fixed;
-    color: var(--texto);
-    min-height: 100vh;
-    padding-bottom: 60px;
+    color: var(--texto); min-height: 100vh; padding-bottom: 60px;
   }
-
-  /* ── ENCABEZADO ── */
   header {
-    background: rgba(10,25,47,0.93);
-    backdrop-filter: blur(6px);
-    color: #fff;
-    padding: 14px 28px;
-    display: flex;
-    align-items: center;
-    gap: 18px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(0,0,0,.3);
-    border-bottom: 2px solid #2563a8;
-  }
-  header img.logo-top {
-    height: 56px;
-    width: auto;
-    display: block;
+    background: rgba(10,25,47,0.93); backdrop-filter: blur(6px);
+    color: #fff; padding: 14px 28px; display: flex; align-items: center; gap: 18px;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,.3); border-bottom: 2px solid #2563a8;
   }
   header .header-texto { display: flex; flex-direction: column; gap: 2px; }
   header .titulo-form { font-size: .95rem; font-weight: 600; color: #93c5fd; letter-spacing: .5px; }
   header .subtitulo   { font-size: .78rem; opacity: .65; color: #cbd5e1; }
   header .pais-badge {
-    margin-left: auto;
-    background: #f59e0b;
-    color: #1a1a1a;
-    font-size: .75rem;
-    font-weight: 700;
-    padding: 5px 14px;
-    border-radius: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
+    margin-left: auto; background: #f59e0b; color: #1a1a1a;
+    font-size: .75rem; font-weight: 700; padding: 5px 14px;
+    border-radius: 20px; letter-spacing: 1px; text-transform: uppercase;
   }
-
-  /* ── CONTENEDOR ── */
-  .contenedor {
-    max-width: 860px;
-    margin: 28px auto;
-    padding: 0 16px;
-  }
-
-  /* ── SECCIÓN ── */
+  .contenedor { max-width: 860px; margin: 28px auto; padding: 0 16px; }
   .seccion {
-    background: rgba(255,255,255,.97);
-    border-radius: 10px;
-    box-shadow: var(--sombra);
-    margin-bottom: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(37,99,168,.15);
+    background: rgba(255,255,255,.97); border-radius: 10px; box-shadow: var(--sombra);
+    margin-bottom: 20px; overflow: hidden; border: 1px solid rgba(37,99,168,.15);
   }
   .seccion-header {
-    background: var(--azul);
-    color: #fff;
-    padding: 12px 20px;
-    font-size: .78rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    display: flex;
-    align-items: center;
-    gap: 10px;
+    background: var(--azul); color: #fff; padding: 12px 20px;
+    font-size: .78rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    display: flex; align-items: center; gap: 10px;
   }
   .seccion-header .num {
-    background: rgba(255,255,255,.22);
-    width: 24px; height: 24px;
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    font-size: .75rem; font-weight: 700;
+    background: rgba(255,255,255,.22); width: 24px; height: 24px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center; font-size: .75rem; font-weight: 700;
   }
   .seccion-body { padding: 20px; }
-
-  /* ── GRID CAMPOS ── */
   .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
   .span-2 { grid-column: span 2; }
-
-  @media (max-width: 600px) {
-    .grid-2 { grid-template-columns: 1fr; }
-    .span-2 { grid-column: span 1; }
-  }
-
-  /* ── CAMPO ── */
+  @media (max-width: 600px) { .grid-2 { grid-template-columns: 1fr; } .span-2 { grid-column: span 1; } }
   .campo { display: flex; flex-direction: column; gap: 5px; }
-  .campo label {
-    font-size: .75rem;
-    font-weight: 700;
-    color: var(--texto-suave);
-    text-transform: uppercase;
-    letter-spacing: .6px;
-  }
+  .campo label { font-size: .75rem; font-weight: 700; color: var(--texto-suave); text-transform: uppercase; letter-spacing: .6px; }
   .campo label .req { color: var(--rojo); margin-left: 2px; }
   .campo input, .campo select {
-    border: 1.5px solid var(--gris-borde);
-    border-radius: var(--radio);
-    padding: 9px 12px;
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: .9rem;
-    color: var(--texto);
-    background: var(--blanco);
-    transition: border-color .15s;
-    width: 100%;
+    border: 1.5px solid var(--gris-borde); border-radius: var(--radio);
+    padding: 9px 12px; font-family: 'IBM Plex Sans', sans-serif;
+    font-size: .9rem; color: var(--texto); background: var(--blanco);
+    transition: border-color .15s; width: 100%;
   }
-  .campo input:focus, .campo select:focus {
-    outline: none;
-    border-color: var(--azul-med);
-    box-shadow: 0 0 0 3px rgba(37,99,168,.12);
-  }
+  .campo input:focus, .campo select:focus { outline: none; border-color: var(--azul-med); box-shadow: 0 0 0 3px rgba(37,99,168,.12); }
   .campo input.error, .campo select.error { border-color: var(--rojo); }
-
-  /* ── TABLA SUSTANCIAS ── */
   .tabla-wrap { overflow-x: auto; }
-  table.sustancias {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: .82rem;
-  }
+  table.sustancias { width: 100%; border-collapse: collapse; font-size: .82rem; }
   table.sustancias th {
-    background: var(--azul);
-    color: #fff;
-    padding: 8px 10px;
-    text-align: center;
-    font-weight: 700;
-    font-size: .73rem;
-    letter-spacing: .5px;
-    white-space: nowrap;
+    background: var(--azul); color: #fff; padding: 8px 10px; text-align: center;
+    font-weight: 700; font-size: .73rem; letter-spacing: .5px; white-space: nowrap;
   }
   table.sustancias th:first-child { text-align: left; min-width: 140px; }
-  table.sustancias td {
-    padding: 6px 6px;
-    border-bottom: 1px solid #e2eaf4;
-    vertical-align: middle;
-  }
+  table.sustancias td { padding: 6px 6px; border-bottom: 1px solid #e2eaf4; vertical-align: middle; }
   table.sustancias tr:last-child td { border-bottom: none; }
   table.sustancias tr:hover td { background: #f5f8fc; }
-  table.sustancias td:first-child {
-    font-weight: 600;
-    padding-left: 10px;
-    color: var(--texto);
-  }
+  table.sustancias td:first-child { font-weight: 600; padding-left: 10px; color: var(--texto); }
   table.sustancias td.total-cell {
-    background: var(--azul-claro);
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 700;
-    text-align: center;
-    color: var(--azul);
-    font-size: .85rem;
+    background: var(--azul-claro); font-family: 'IBM Plex Mono', monospace;
+    font-weight: 700; text-align: center; color: var(--azul); font-size: .85rem;
   }
-
   input.num-inp {
-    width: 62px;
-    border: 1.5px solid var(--gris-borde);
-    border-radius: 4px;
-    padding: 6px 4px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: .88rem;
-    text-align: center;
-    color: var(--texto);
-    display: block;
-    margin: 0 auto;
-    -moz-appearance: textfield;
+    width: 62px; border: 1.5px solid var(--gris-borde); border-radius: 4px; padding: 6px 4px;
+    font-family: 'IBM Plex Mono', monospace; font-size: .88rem; text-align: center;
+    color: var(--texto); display: block; margin: 0 auto; -moz-appearance: textfield;
   }
-  input.num-inp::-webkit-inner-spin-button,
-  input.num-inp::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-  input.num-inp:focus {
-    outline: none;
-    border-color: var(--azul-med);
-    box-shadow: 0 0 0 2px rgba(37,99,168,.14);
-  }
-
+  input.num-inp::-webkit-inner-spin-button, input.num-inp::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  input.num-inp:focus { outline: none; border-color: var(--azul-med); box-shadow: 0 0 0 2px rgba(37,99,168,.14); }
   input.prom-inp {
-    width: 72px;
-    border: 1.5px solid var(--gris-borde);
-    border-radius: 4px;
-    padding: 6px 4px;
-    font-family: 'IBM Plex Mono', monospace;
-    font-size: .85rem;
-    text-align: center;
-    color: var(--texto-suave);
-    display: block;
-    margin: 0 auto;
-    -moz-appearance: textfield;
+    width: 72px; border: 1.5px solid var(--gris-borde); border-radius: 4px; padding: 6px 4px;
+    font-family: 'IBM Plex Mono', monospace; font-size: .85rem; text-align: center;
+    color: var(--texto-suave); display: block; margin: 0 auto; -moz-appearance: textfield;
   }
-  input.prom-inp::-webkit-inner-spin-button,
-  input.prom-inp::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
-  input.prom-inp:focus {
-    outline: none;
-    border-color: var(--azul-med);
-    box-shadow: 0 0 0 2px rgba(37,99,168,.14);
-  }
-
+  input.prom-inp::-webkit-inner-spin-button, input.prom-inp::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+  input.prom-inp:focus { outline: none; border-color: var(--azul-med); box-shadow: 0 0 0 2px rgba(37,99,168,.14); }
   td.total-cell { min-width: 52px; }
   .otra-sust-fila td { padding: 8px 6px; }
-
-  /* ── TRANSGRESIÓN ── */
-  .transgresion-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-    gap: 12px;
-    margin-bottom: 16px;
-  }
+  .transgresion-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(175px, 1fr)); gap: 12px; margin-bottom: 16px; }
   .toggle-campo { display: flex; flex-direction: column; gap: 5px; }
-  .toggle-campo label {
-    font-size: .75rem; font-weight: 700;
-    color: var(--texto-suave);
-    text-transform: uppercase; letter-spacing: .5px;
-  }
+  .toggle-campo label { font-size: .75rem; font-weight: 700; color: var(--texto-suave); text-transform: uppercase; letter-spacing: .5px; }
   .toggle-btn-group { display: flex; border-radius: var(--radio); overflow: hidden; border: 1.5px solid var(--gris-borde); }
   .toggle-btn-group button {
-    flex: 1; padding: 8px 0;
-    border: none; background: var(--blanco);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: .85rem; font-weight: 500;
-    cursor: pointer; transition: background .15s, color .15s;
-    color: var(--texto-suave);
+    flex: 1; padding: 8px 0; border: none; background: var(--blanco);
+    font-family: 'IBM Plex Sans', sans-serif; font-size: .85rem; font-weight: 500;
+    cursor: pointer; transition: background .15s, color .15s; color: var(--texto-suave);
   }
   .toggle-btn-group button:first-child { border-right: 1px solid var(--gris-borde); }
   .toggle-btn-group button.activo-si { background: #dcfce7; color: #16a34a; font-weight: 700; }
   .toggle-btn-group button.activo-no { background: #fee2e2; color: #dc2626; font-weight: 700; }
-
-  /* ── VIF / ACT TABLES ── */
-  table.vif-table, table.act-table {
-    width: auto; border-collapse: collapse; font-size: .82rem; margin-top: 4px;
-  }
+  table.vif-table, table.act-table { width: auto; border-collapse: collapse; font-size: .82rem; margin-top: 4px; }
   table.act-table { width: 100%; margin-bottom: 16px; }
-  table.vif-table th, table.act-table th {
-    background: var(--azul); color: #fff;
-    padding: 7px 12px; font-size: .73rem;
-    text-align: center; font-weight: 700;
-  }
+  table.vif-table th, table.act-table th { background: var(--azul); color: #fff; padding: 7px 12px; font-size: .73rem; text-align: center; font-weight: 700; }
   table.act-table th:first-child { text-align: left; }
-  table.vif-table td, table.act-table td {
-    padding: 6px 8px; border-bottom: 1px solid #e2eaf4;
-  }
-  table.vif-table td.total-cell, table.act-table td.total-cell {
-    background: var(--azul-claro);
-    font-family: 'IBM Plex Mono', monospace;
-    font-weight: 700; color: var(--azul); text-align: center;
-  }
-
-  /* ── ESCALA 0-20 ── */
+  table.vif-table td, table.act-table td { padding: 6px 8px; border-bottom: 1px solid #e2eaf4; }
+  table.vif-table td.total-cell, table.act-table td.total-cell { background: var(--azul-claro); font-family: 'IBM Plex Mono', monospace; font-weight: 700; color: var(--azul); text-align: center; }
   .escala-wrap { margin-bottom: 16px; }
-  .escala-label {
-    font-size: .75rem; font-weight: 700; color: var(--texto-suave);
-    text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px;
-  }
+  .escala-label { font-size: .75rem; font-weight: 700; color: var(--texto-suave); text-transform: uppercase; letter-spacing: .6px; margin-bottom: 8px; }
   .escala-label .req { color: var(--rojo); }
-  .escala-extremos {
-    display: flex; justify-content: space-between;
-    font-size: .68rem; font-weight: 600; color: var(--texto-suave);
-    text-transform: uppercase; letter-spacing: .4px;
-    margin-bottom: 4px; padding: 0 2px;
-  }
-  .escala-opciones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-  }
+  .escala-extremos { display: flex; justify-content: space-between; font-size: .68rem; font-weight: 600; color: var(--texto-suave); text-transform: uppercase; letter-spacing: .4px; margin-bottom: 4px; padding: 0 2px; }
+  .escala-opciones { display: flex; flex-wrap: wrap; gap: 5px; }
   .escala-opciones label {
     display: flex; align-items: center; justify-content: center;
-    background: var(--gris-bg);
-    border: 1.5px solid var(--gris-borde);
-    border-radius: 50%;
-    width: 36px; height: 36px;
-    cursor: pointer; font-size: .78rem; font-weight: 600;
-    transition: all .15s; text-align: center;
-    color: var(--texto); flex-shrink: 0;
+    background: var(--gris-bg); border: 1.5px solid var(--gris-borde); border-radius: 50%;
+    width: 36px; height: 36px; cursor: pointer; font-size: .78rem; font-weight: 600;
+    transition: all .15s; text-align: center; color: var(--texto); flex-shrink: 0;
   }
   .escala-opciones label small { display: none; }
   .escala-opciones input[type=radio] { display: none; }
   .escala-opciones label:hover { background: #dbeafe; border-color: var(--azul-med); }
-  .escala-opciones label:has(input:checked) {
-    background: var(--azul-med); border-color: var(--azul-med);
-    color: #fff; transform: scale(1.12);
-    box-shadow: 0 2px 8px rgba(37,99,168,.35);
-  }
-
-  /* ── VIVIENDA ── */
+  .escala-opciones label:has(input:checked) { background: var(--azul-med); border-color: var(--azul-med); color: #fff; transform: scale(1.12); box-shadow: 0 2px 8px rgba(37,99,168,.35); }
   .vivienda-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px; }
-
-  /* ── BOTÓN ENVIAR ── */
   .btn-enviar {
-    display: block; width: 100%; padding: 16px;
-    background: var(--verde); color: #fff; border: none;
-    border-radius: var(--radio);
-    font-family: 'IBM Plex Sans', sans-serif;
-    font-size: 1rem; font-weight: 700;
-    cursor: pointer; letter-spacing: 1px;
-    text-transform: uppercase; transition: background .15s, transform .1s;
+    display: block; width: 100%; padding: 16px; background: var(--verde); color: #fff; border: none;
+    border-radius: var(--radio); font-family: 'IBM Plex Sans', sans-serif; font-size: 1rem; font-weight: 700;
+    cursor: pointer; letter-spacing: 1px; text-transform: uppercase; transition: background .15s, transform .1s;
     margin-top: 8px; box-shadow: 0 3px 10px rgba(26,58,92,.3);
   }
   .btn-enviar:hover { background: #15803d; }
   .btn-enviar:active { transform: scale(.99); }
   .btn-enviar:disabled { background: var(--gris-borde); cursor: not-allowed; box-shadow: none; }
-
-  /* ── TOAST ── */
   #toast {
     position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
-    background: var(--verde); color: #fff;
-    padding: 14px 28px; border-radius: 8px;
-    font-weight: 600; font-size: .9rem;
-    box-shadow: 0 4px 16px rgba(0,0,0,.2);
+    background: var(--verde); color: #fff; padding: 14px 28px; border-radius: 8px;
+    font-weight: 600; font-size: .9rem; box-shadow: 0 4px 16px rgba(0,0,0,.2);
     display: none; z-index: 999; text-align: center; max-width: 90vw;
   }
   #toast.error-toast { background: var(--rojo); }
-
   .nota { text-align: center; font-size: .75rem; color: #7a9cc0; margin-top: 14px; }
   .sep { border: none; border-top: 1px solid #dde8f5; margin: 16px 0; }
   #otra-accion-desc-wrap { margin-top: 10px; display: none; }
-
-  input.inp-error {
-    border-color: var(--rojo) !important;
-    background: #fff0f0 !important;
-    color: var(--rojo) !important;
-    box-shadow: 0 0 0 2px rgba(220,38,38,.18) !important;
-  }
+  input.inp-error { border-color: var(--rojo) !important; background: #fff0f0 !important; color: var(--rojo) !important; box-shadow: 0 0 0 2px rgba(220,38,38,.18) !important; }
 </style>
 </head>
 <body>
@@ -357,13 +166,13 @@
     <div class="subtitulo" style="opacity:.8">Proyecto QALAT · Captura de datos</div>
     <div class="subtitulo" style="opacity:.45;font-size:.7rem;margin-top:1px">© Rodrigo Portilla · UNODC</div>
   </div>
-  <div class="pais-badge">🇪🇨 Ecuador</div>
+  <div class="pais-badge">🇲🇽 México</div>
 </header>
 
 <div class="contenedor">
 <form id="formTop" novalidate>
 
-  <!-- ══ SECCIÓN 0 ══ -->
+  <!-- SECCIÓN 0 -->
   <div class="seccion">
     <div class="seccion-header"><span class="num">0</span> Datos de identificación</div>
     <div class="seccion-body">
@@ -372,8 +181,8 @@
           <label>Centro <span class="req">*</span></label>
           <select id="centro" required>
             <option value="">— Seleccione centro —</option>
-            <option>EESS01EC</option><option>EESS02EC</option><option>EESS03EC</option>
-            <option>EESS04EC</option><option>EESS05EC</option>
+            <option>CENT01MX</option><option>CENT02MX</option><option>CENT03MX</option>
+            <option>CENT04MX</option><option>CENT05MX</option>
           </select>
         </div>
         <div class="campo">
@@ -403,7 +212,6 @@
           <input type="date" id="fecha_nacimiento">
         </div>
         <div class="campo">
-          <!-- Ecuador usa H/M en lugar de M/F -->
           <label>Sexo</label>
           <select id="sexo">
             <option value="">— Seleccione —</option>
@@ -420,7 +228,7 @@
     </div>
   </div>
 
-  <!-- ══ SECCIÓN 1: SUSTANCIAS ══ -->
+  <!-- SECCIÓN 1 -->
   <div class="seccion">
     <div class="seccion-header"><span class="num">1</span> Sección 1: Uso de Sustancias</div>
     <div class="seccion-body">
@@ -431,19 +239,13 @@
         <table class="sustancias">
           <thead>
             <tr>
-              <th>Sustancia</th>
-              <th>Última Sem.</th>
-              <th>Semana 3</th>
-              <th>Semana 2</th>
-              <th>Semana 1</th>
-              <th>Total</th>
-              <th>Promedio</th>
+              <th>Sustancia</th><th>Última Sem.</th><th>Semana 3</th>
+              <th>Semana 2</th><th>Semana 1</th><th>Total</th><th>Promedio</th>
             </tr>
           </thead>
           <tbody>
-            <!-- a. Alcohol — igual que Perú -->
             <tr>
-              <td>Alcohol</td>
+              <td>a. Alcohol</td>
               <td><input type="number" min="0" max="7" class="num-inp s4" data-sust="alcohol"></td>
               <td><input type="number" min="0" max="7" class="num-inp s3" data-sust="alcohol"></td>
               <td><input type="number" min="0" max="7" class="num-inp s2" data-sust="alcohol"></td>
@@ -451,29 +253,26 @@
               <td class="total-cell" id="alcohol_total"></td>
               <td><input type="number" step="any" class="prom-inp" id="alcohol_prom" placeholder="—"><br><small style="color:var(--texto-suave);font-size:.68rem;display:block;text-align:center">Tragos/día</small></td>
             </tr>
-            <!-- b. Marihuana — Ecuador: Bate-hits/día (Perú: Pitos/día) -->
             <tr>
-              <td>Marihuana</td>
+              <td>b. Marihuana</td>
               <td><input type="number" min="0" max="7" class="num-inp s4" data-sust="marihuana"></td>
               <td><input type="number" min="0" max="7" class="num-inp s3" data-sust="marihuana"></td>
               <td><input type="number" min="0" max="7" class="num-inp s2" data-sust="marihuana"></td>
               <td><input type="number" min="0" max="7" class="num-inp s1" data-sust="marihuana"></td>
               <td class="total-cell" id="marihuana_total"></td>
-              <td><input type="number" step="any" class="prom-inp" id="marihuana_prom" placeholder="—"><br><small style="color:var(--texto-suave);font-size:.68rem;display:block;text-align:center">Bate-hits/día</small></td>
+              <td><input type="number" step="any" class="prom-inp" id="marihuana_prom" placeholder="—"><br><small style="color:var(--texto-suave);font-size:.68rem;display:block;text-align:center">Cigarro/día</small></td>
             </tr>
-            <!-- c. Pasta Base/basuco — Ecuador: Funda/paquete (Perú: Papelillos/día) -->
             <tr>
-              <td>Pasta Base/basuco</td>
-              <td><input type="number" min="0" max="7" class="num-inp s4" data-sust="pastabase"></td>
-              <td><input type="number" min="0" max="7" class="num-inp s3" data-sust="pastabase"></td>
-              <td><input type="number" min="0" max="7" class="num-inp s2" data-sust="pastabase"></td>
-              <td><input type="number" min="0" max="7" class="num-inp s1" data-sust="pastabase"></td>
-              <td class="total-cell" id="pastabase_total"></td>
-              <td><input type="number" step="any" class="prom-inp" id="pastabase_prom" placeholder="—"><br><small style="color:var(--texto-suave);font-size:.68rem;display:block;text-align:center">Funda/paquete</small></td>
+              <td>c. Metanfetamina (cristal)</td>
+              <td><input type="number" min="0" max="7" class="num-inp s4" data-sust="metanfetamina"></td>
+              <td><input type="number" min="0" max="7" class="num-inp s3" data-sust="metanfetamina"></td>
+              <td><input type="number" min="0" max="7" class="num-inp s2" data-sust="metanfetamina"></td>
+              <td><input type="number" min="0" max="7" class="num-inp s1" data-sust="metanfetamina"></td>
+              <td class="total-cell" id="metanfetamina_total"></td>
+              <td><input type="number" step="any" class="prom-inp" id="metanfetamina_prom" placeholder="—"><br><small style="color:var(--texto-suave);font-size:.68rem;display:block;text-align:center">Esnifada/día</small></td>
             </tr>
-            <!-- d. Cocaína — igual que Perú -->
             <tr>
-              <td>Cocaína</td>
+              <td>d. Cocaína/crack (piedra)</td>
               <td><input type="number" min="0" max="7" class="num-inp s4" data-sust="cocaina"></td>
               <td><input type="number" min="0" max="7" class="num-inp s3" data-sust="cocaina"></td>
               <td><input type="number" min="0" max="7" class="num-inp s2" data-sust="cocaina"></td>
@@ -481,9 +280,8 @@
               <td class="total-cell" id="cocaina_total"></td>
               <td><input type="number" step="any" class="prom-inp" id="cocaina_prom" placeholder="—"><br><small style="color:var(--texto-suave);font-size:.68rem;display:block;text-align:center">Gramos/día</small></td>
             </tr>
-            <!-- e. Sedantes — igual que Perú -->
             <tr>
-              <td>Sedantes o Tranquilizantes</td>
+              <td>e. Sedantes o tranquilizantes</td>
               <td><input type="number" min="0" max="7" class="num-inp s4" data-sust="sedantes"></td>
               <td><input type="number" min="0" max="7" class="num-inp s3" data-sust="sedantes"></td>
               <td><input type="number" min="0" max="7" class="num-inp s2" data-sust="sedantes"></td>
@@ -491,25 +289,13 @@
               <td class="total-cell" id="sedantes_total"></td>
               <td><input type="number" step="any" class="prom-inp" id="sedantes_prom" placeholder="—"><br><small style="color:var(--texto-suave);font-size:.68rem;display:block;text-align:center">Comprimidos/día</small></td>
             </tr>
-            <!-- f. Heroína -->
-            <tr>
-              <td>Heroína</td>
-              <td><input type="number" min="0" max="7" class="num-inp s4" data-sust="heroina"></td>
-              <td><input type="number" min="0" max="7" class="num-inp s3" data-sust="heroina"></td>
-              <td><input type="number" min="0" max="7" class="num-inp s2" data-sust="heroina"></td>
-              <td><input type="number" min="0" max="7" class="num-inp s1" data-sust="heroina"></td>
-              <td class="total-cell" id="heroina_total"></td>
-              <td><input type="number" step="any" class="prom-inp" id="heroina_prom" placeholder="—"><br><small style="color:var(--texto-suave);font-size:.68rem;display:block;text-align:center">Paquete/día</small></td>
-            </tr>
-            <!-- g. Otra sustancia nombre -->
             <tr class="otra-sust-fila">
               <td colspan="7" style="padding:8px 10px">
                 <input type="text" id="otra_sust_nombre" placeholder="Nombre de otra sustancia (si aplica)" style="width:100%;border:1.5px solid var(--gris-borde);border-radius:4px;padding:6px 10px;font-family:inherit;font-size:.85rem;">
-                <input type="text" id="otra_sust_unidad" placeholder="Unidad de medida" style="width:100%;margin-top:6px;border:1.5px solid var(--gris-borde);border-radius:4px;padding:6px 10px;font-family:inherit;font-size:.85rem;">
               </td>
             </tr>
             <tr>
-              <td><em style="color:var(--texto-suave)">Otra sustancia</em></td>
+              <td><em style="color:var(--texto-suave)">f. Otra sustancia</em></td>
               <td><input type="number" min="0" max="7" class="num-inp s4" data-sust="otra_sust"></td>
               <td><input type="number" min="0" max="7" class="num-inp s3" data-sust="otra_sust"></td>
               <td><input type="number" min="0" max="7" class="num-inp s2" data-sust="otra_sust"></td>
@@ -520,64 +306,58 @@
           </tbody>
         </table>
       </div>
-
       <hr class="sep">
-      <!-- h. Sustancia principal — índice h en Ecuador (g en Perú) -->
       <div class="campo">
-        <label>h. Sustancia principal <span class="req">*</span></label>
+        <label>g. ¿Cuál considera que le genera más problemas? (Sustancia impacto/principal) <span class="req">*</span></label>
         <select id="sustancia_principal" required>
           <option value="">— Seleccione la que genera más problemas —</option>
           <option value="Alcohol">Alcohol</option>
           <option value="Marihuana">Marihuana</option>
-          <option value="Pasta Base/basuco">Pasta Base/basuco</option>
-          <option value="Cocaína">Cocaína</option>
-          <option value="Sedantes">Sedantes o Tranquilizantes</option>
-          <option value="Heroína">Heroína</option>
+          <option value="Metanfetamina">Metanfetamina (cristal)</option>
+          <option value="Cocaína">Cocaína/crack (piedra)</option>
+          <option value="Sedantes">Sedantes o tranquilizantes</option>
           <option value="Otra">Otra sustancia</option>
         </select>
       </div>
     </div>
   </div>
 
-  <!-- ══ SECCIÓN 2: TRANSGRESIÓN ══ -->
+  <!-- SECCIÓN 2 -->
   <div class="seccion">
     <div class="seccion-header"><span class="num">2</span> Sección 2: Transgresión a la Norma Social</div>
     <div class="seccion-body">
-      <p style="font-size:.8rem;color:var(--texto-suave);margin-bottom:14px;">
-        ¿Realizó alguna de las siguientes acciones en las últimas 4 semanas?
-      </p>
+      <p style="font-size:.8rem;color:var(--texto-suave);margin-bottom:14px;">¿Realizó alguna de las siguientes acciones en las últimas 4 semanas?</p>
       <div class="transgresion-grid">
         <div class="toggle-campo">
-          <label>Hurto</label>
+          <label>a. Hurto</label>
           <div class="toggle-btn-group" id="tg-hurto">
             <button type="button" onclick="setToggle('hurto','S',this)">Sí</button>
             <button type="button" onclick="setToggle('hurto','N',this)">No</button>
           </div>
         </div>
         <div class="toggle-campo">
-          <label>Robo</label>
+          <label>b. Robo</label>
           <div class="toggle-btn-group" id="tg-robo">
             <button type="button" onclick="setToggle('robo','S',this)">Sí</button>
             <button type="button" onclick="setToggle('robo','N',this)">No</button>
           </div>
         </div>
         <div class="toggle-campo">
-          <label>Venta de droga</label>
+          <label>c. Venta de droga</label>
           <div class="toggle-btn-group" id="tg-venta_droga">
             <button type="button" onclick="setToggle('venta_droga','S',this)">Sí</button>
             <button type="button" onclick="setToggle('venta_droga','N',this)">No</button>
           </div>
         </div>
-        <!-- Ecuador: "Pelea/riña/bronca" (Perú: "Riña") -->
         <div class="toggle-campo">
-          <label>Pelea / riña / bronca</label>
+          <label>d. Pelea</label>
           <div class="toggle-btn-group" id="tg-rina_pelea">
             <button type="button" onclick="setToggle('rina_pelea','S',this)">Sí</button>
             <button type="button" onclick="setToggle('rina_pelea','N',this)">No</button>
           </div>
         </div>
         <div class="toggle-campo">
-          <label>Otra acción</label>
+          <label>f. Otra acción</label>
           <div class="toggle-btn-group" id="tg-otra_accion">
             <button type="button" onclick="setToggle('otra_accion','S',this);mostrarOtraAccion(true)">Sí</button>
             <button type="button" onclick="setToggle('otra_accion','N',this);mostrarOtraAccion(false)">No</button>
@@ -588,22 +368,17 @@
         <label>Descripción de otra acción</label>
         <input type="text" id="otra_accion_desc" placeholder="Describa la acción">
       </div>
-
       <hr class="sep">
-      <p style="font-size:.75rem;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">
-        Violencia intrafamiliar (VIF) — días por semana (0–7)
-      </p>
+      <p style="font-size:.75rem;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;">e. Violencia intrafamiliar (VIF) — días por semana (0–7)</p>
       <div class="tabla-wrap">
         <table class="vif-table">
-          <thead>
-            <tr><th>Última Sem.</th><th>Semana 3</th><th>Semana 2</th><th>Semana 1</th><th>Total</th></tr>
-          </thead>
+          <thead><tr><th>Última Sem.</th><th>Semana 3</th><th>Semana 2</th><th>Semana 1</th><th>Total</th></tr></thead>
           <tbody>
             <tr>
-              <td><input type="number" id="vif_s4" min="0" max="7" class="num-inp" oninput="calcVif()"></td>
-              <td><input type="number" id="vif_s3" min="0" max="7" class="num-inp" oninput="calcVif()"></td>
-              <td><input type="number" id="vif_s2" min="0" max="7" class="num-inp" oninput="calcVif()"></td>
-              <td><input type="number" id="vif_s1" min="0" max="7" class="num-inp" oninput="calcVif()"></td>
+              <td><input type="number" id="vif_s4" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="vif_s3" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="vif_s2" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="vif_s1" min="0" max="7" class="num-inp"></td>
               <td class="total-cell" id="vif_total"></td>
             </tr>
           </tbody>
@@ -612,485 +387,263 @@
     </div>
   </div>
 
-  <!-- ══ SECCIÓN 3: SALUD ══ -->
+  <!-- SECCIÓN 3 -->
   <div class="seccion">
     <div class="seccion-header"><span class="num">3</span> Sección 3: Salud y Funcionamiento Social</div>
     <div class="seccion-body">
-
-      <!-- a. Salud mental — Ecuador: "Mala/Buena" (Perú: "Pésima/Excelente") -->
       <div class="escala-wrap">
-        <div class="escala-label">a. Estado de salud mental del usuario <span class="req">*</span></div>
+        <div class="escala-label">a. Estado de salud psicológica del usuario (ansiedad, depresión o problemas emocionales) <span class="req">*</span></div>
         <div class="escala-extremos"><span>0 · Mala</span><span>20 · Buena</span></div>
         <div class="escala-opciones">
-          <label><input type="radio" name="salud_mental" value="0">0</label>
-          <label><input type="radio" name="salud_mental" value="1">1</label>
-          <label><input type="radio" name="salud_mental" value="2">2</label>
-          <label><input type="radio" name="salud_mental" value="3">3</label>
-          <label><input type="radio" name="salud_mental" value="4">4</label>
-          <label><input type="radio" name="salud_mental" value="5">5</label>
-          <label><input type="radio" name="salud_mental" value="6">6</label>
-          <label><input type="radio" name="salud_mental" value="7">7</label>
-          <label><input type="radio" name="salud_mental" value="8">8</label>
-          <label><input type="radio" name="salud_mental" value="9">9</label>
-          <label><input type="radio" name="salud_mental" value="10">10</label>
-          <label><input type="radio" name="salud_mental" value="11">11</label>
-          <label><input type="radio" name="salud_mental" value="12">12</label>
-          <label><input type="radio" name="salud_mental" value="13">13</label>
-          <label><input type="radio" name="salud_mental" value="14">14</label>
-          <label><input type="radio" name="salud_mental" value="15">15</label>
-          <label><input type="radio" name="salud_mental" value="16">16</label>
-          <label><input type="radio" name="salud_mental" value="17">17</label>
-          <label><input type="radio" name="salud_mental" value="18">18</label>
-          <label><input type="radio" name="salud_mental" value="19">19</label>
-          <label><input type="radio" name="salud_mental" value="20">20</label>
+          <label><input type="radio" name="salud_psicologica" value="0">0</label><label><input type="radio" name="salud_psicologica" value="1">1</label>
+          <label><input type="radio" name="salud_psicologica" value="2">2</label><label><input type="radio" name="salud_psicologica" value="3">3</label>
+          <label><input type="radio" name="salud_psicologica" value="4">4</label><label><input type="radio" name="salud_psicologica" value="5">5</label>
+          <label><input type="radio" name="salud_psicologica" value="6">6</label><label><input type="radio" name="salud_psicologica" value="7">7</label>
+          <label><input type="radio" name="salud_psicologica" value="8">8</label><label><input type="radio" name="salud_psicologica" value="9">9</label>
+          <label><input type="radio" name="salud_psicologica" value="10">10</label><label><input type="radio" name="salud_psicologica" value="11">11</label>
+          <label><input type="radio" name="salud_psicologica" value="12">12</label><label><input type="radio" name="salud_psicologica" value="13">13</label>
+          <label><input type="radio" name="salud_psicologica" value="14">14</label><label><input type="radio" name="salud_psicologica" value="15">15</label>
+          <label><input type="radio" name="salud_psicologica" value="16">16</label><label><input type="radio" name="salud_psicologica" value="17">17</label>
+          <label><input type="radio" name="salud_psicologica" value="18">18</label><label><input type="radio" name="salud_psicologica" value="19">19</label>
+          <label><input type="radio" name="salud_psicologica" value="20">20</label>
         </div>
       </div>
-
       <hr class="sep">
-
-      <!-- Actividades — Ecuador agrega "Otras ocupaciones no remuneradas" (ítem d) -->
-      <p style="font-size:.75rem;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">
-        Días de actividad por semana (0–7)
-      </p>
+      <p style="font-size:.75rem;font-weight:700;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">Días de actividad por semana (0–7)</p>
       <div class="tabla-wrap">
         <table class="act-table">
-          <thead>
-            <tr><th>Actividad</th><th>Última Sem.</th><th>Semana 3</th><th>Semana 2</th><th>Semana 1</th><th>Total</th></tr>
-          </thead>
+          <thead><tr><th>Actividad</th><th>Última Sem.</th><th>Semana 3</th><th>Semana 2</th><th>Semana 1</th><th>Total</th></tr></thead>
           <tbody>
             <tr>
-              <td style="font-weight:600">b. Trabajo remunerado</td>
-              <td><input type="number" id="dias_trabajo_s4" min="0" max="7" class="num-inp" oninput="calcAct('dias_trabajo')"></td>
-              <td><input type="number" id="dias_trabajo_s3" min="0" max="7" class="num-inp" oninput="calcAct('dias_trabajo')"></td>
-              <td><input type="number" id="dias_trabajo_s2" min="0" max="7" class="num-inp" oninput="calcAct('dias_trabajo')"></td>
-              <td><input type="number" id="dias_trabajo_s1" min="0" max="7" class="num-inp" oninput="calcAct('dias_trabajo')"></td>
+              <td style="font-weight:600">b. Días de trabajo remunerado</td>
+              <td><input type="number" id="dias_trabajo_s4" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="dias_trabajo_s3" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="dias_trabajo_s2" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="dias_trabajo_s1" min="0" max="7" class="num-inp"></td>
               <td class="total-cell" id="dias_trabajo_total"></td>
             </tr>
             <tr>
-              <td style="font-weight:600">c. Educación</td>
-              <td><input type="number" id="dias_educacion_s4" min="0" max="7" class="num-inp" oninput="calcAct('dias_educacion')"></td>
-              <td><input type="number" id="dias_educacion_s3" min="0" max="7" class="num-inp" oninput="calcAct('dias_educacion')"></td>
-              <td><input type="number" id="dias_educacion_s2" min="0" max="7" class="num-inp" oninput="calcAct('dias_educacion')"></td>
-              <td><input type="number" id="dias_educacion_s1" min="0" max="7" class="num-inp" oninput="calcAct('dias_educacion')"></td>
+              <td style="font-weight:600">c. Días asistidos a educación</td>
+              <td><input type="number" id="dias_educacion_s4" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="dias_educacion_s3" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="dias_educacion_s2" min="0" max="7" class="num-inp"></td>
+              <td><input type="number" id="dias_educacion_s1" min="0" max="7" class="num-inp"></td>
               <td class="total-cell" id="dias_educacion_total"></td>
-            </tr>
-            <!-- d. Otras ocupaciones no remuneradas -->
-            <tr>
-              <td style="font-weight:600">d. Otras ocupaciones no remuneradas</td>
-              <td><input type="number" id="dias_otras_s4" min="0" max="7" class="num-inp" oninput="calcAct('dias_otras')"></td>
-              <td><input type="number" id="dias_otras_s3" min="0" max="7" class="num-inp" oninput="calcAct('dias_otras')"></td>
-              <td><input type="number" id="dias_otras_s2" min="0" max="7" class="num-inp" oninput="calcAct('dias_otras')"></td>
-              <td><input type="number" id="dias_otras_s1" min="0" max="7" class="num-inp" oninput="calcAct('dias_otras')"></td>
-              <td class="total-cell" id="dias_otras_total"></td>
             </tr>
           </tbody>
         </table>
       </div>
-
       <hr class="sep">
-
-      <!-- e. Salud física — Ecuador: "Mala/Buena", índice e (Perú: d, "Pésima/Excelente") -->
       <div class="escala-wrap">
-        <div class="escala-label">e. Estado de salud física del usuario <span style="font-weight:400;text-transform:none;letter-spacing:0">(síntomas físicos o molestias)</span> <span class="req">*</span></div>
+        <div class="escala-label">d. Estado de salud física del usuario (síntomas físicos o molestias) <span class="req">*</span></div>
         <div class="escala-extremos"><span>0 · Mala</span><span>20 · Buena</span></div>
         <div class="escala-opciones">
-          <label><input type="radio" name="salud_fisica" value="0">0</label>
-          <label><input type="radio" name="salud_fisica" value="1">1</label>
-          <label><input type="radio" name="salud_fisica" value="2">2</label>
-          <label><input type="radio" name="salud_fisica" value="3">3</label>
-          <label><input type="radio" name="salud_fisica" value="4">4</label>
-          <label><input type="radio" name="salud_fisica" value="5">5</label>
-          <label><input type="radio" name="salud_fisica" value="6">6</label>
-          <label><input type="radio" name="salud_fisica" value="7">7</label>
-          <label><input type="radio" name="salud_fisica" value="8">8</label>
-          <label><input type="radio" name="salud_fisica" value="9">9</label>
-          <label><input type="radio" name="salud_fisica" value="10">10</label>
-          <label><input type="radio" name="salud_fisica" value="11">11</label>
-          <label><input type="radio" name="salud_fisica" value="12">12</label>
-          <label><input type="radio" name="salud_fisica" value="13">13</label>
-          <label><input type="radio" name="salud_fisica" value="14">14</label>
-          <label><input type="radio" name="salud_fisica" value="15">15</label>
-          <label><input type="radio" name="salud_fisica" value="16">16</label>
-          <label><input type="radio" name="salud_fisica" value="17">17</label>
-          <label><input type="radio" name="salud_fisica" value="18">18</label>
-          <label><input type="radio" name="salud_fisica" value="19">19</label>
+          <label><input type="radio" name="salud_fisica" value="0">0</label><label><input type="radio" name="salud_fisica" value="1">1</label>
+          <label><input type="radio" name="salud_fisica" value="2">2</label><label><input type="radio" name="salud_fisica" value="3">3</label>
+          <label><input type="radio" name="salud_fisica" value="4">4</label><label><input type="radio" name="salud_fisica" value="5">5</label>
+          <label><input type="radio" name="salud_fisica" value="6">6</label><label><input type="radio" name="salud_fisica" value="7">7</label>
+          <label><input type="radio" name="salud_fisica" value="8">8</label><label><input type="radio" name="salud_fisica" value="9">9</label>
+          <label><input type="radio" name="salud_fisica" value="10">10</label><label><input type="radio" name="salud_fisica" value="11">11</label>
+          <label><input type="radio" name="salud_fisica" value="12">12</label><label><input type="radio" name="salud_fisica" value="13">13</label>
+          <label><input type="radio" name="salud_fisica" value="14">14</label><label><input type="radio" name="salud_fisica" value="15">15</label>
+          <label><input type="radio" name="salud_fisica" value="16">16</label><label><input type="radio" name="salud_fisica" value="17">17</label>
+          <label><input type="radio" name="salud_fisica" value="18">18</label><label><input type="radio" name="salud_fisica" value="19">19</label>
           <label><input type="radio" name="salud_fisica" value="20">20</label>
         </div>
       </div>
-
       <hr class="sep">
-
-      <!-- f/g. Vivienda — mismos ítems, índices f y g en Ecuador -->
       <div class="vivienda-grid">
         <div class="toggle-campo">
-          <label>f. ¿Vivienda estable?</label>
+          <label>e. ¿Tiene un lugar estable para vivir?</label>
           <div class="toggle-btn-group" id="tg-vivienda_estable">
             <button type="button" onclick="setToggle('vivienda_estable','S',this)">Sí</button>
             <button type="button" onclick="setToggle('vivienda_estable','N',this)">No</button>
           </div>
         </div>
         <div class="toggle-campo">
-          <label>g. ¿Condiciones básicas?</label>
+          <label>f. ¿Vivienda con condiciones básicas?</label>
           <div class="toggle-btn-group" id="tg-vivienda_basica">
             <button type="button" onclick="setToggle('vivienda_basica','S',this)">Sí</button>
             <button type="button" onclick="setToggle('vivienda_basica','N',this)">No</button>
           </div>
         </div>
       </div>
-
       <hr class="sep">
-
-      <!-- h. Calidad de vida — índice h en Ecuador (g en Perú), "Mala/Buena" -->
       <div class="escala-wrap">
-        <div class="escala-label">h. Calidad de vida global <span style="font-weight:400;text-transform:none;letter-spacing:0">(capaz de disfrutar la vida, bien con familia y entorno)</span> <span class="req">*</span></div>
+        <div class="escala-label">g. Calidad de vida global (capaz de disfrutar la vida, bien con familia y entorno) <span class="req">*</span></div>
         <div class="escala-extremos"><span>0 · Mala</span><span>20 · Buena</span></div>
         <div class="escala-opciones">
-          <label><input type="radio" name="calidad_vida" value="0">0</label>
-          <label><input type="radio" name="calidad_vida" value="1">1</label>
-          <label><input type="radio" name="calidad_vida" value="2">2</label>
-          <label><input type="radio" name="calidad_vida" value="3">3</label>
-          <label><input type="radio" name="calidad_vida" value="4">4</label>
-          <label><input type="radio" name="calidad_vida" value="5">5</label>
-          <label><input type="radio" name="calidad_vida" value="6">6</label>
-          <label><input type="radio" name="calidad_vida" value="7">7</label>
-          <label><input type="radio" name="salud_fisica" value="8">8</label>
-          <label><input type="radio" name="calidad_vida" value="9">9</label>
-          <label><input type="radio" name="calidad_vida" value="10">10</label>
-          <label><input type="radio" name="calidad_vida" value="11">11</label>
-          <label><input type="radio" name="calidad_vida" value="12">12</label>
-          <label><input type="radio" name="calidad_vida" value="13">13</label>
-          <label><input type="radio" name="calidad_vida" value="14">14</label>
-          <label><input type="radio" name="calidad_vida" value="15">15</label>
-          <label><input type="radio" name="calidad_vida" value="16">16</label>
-          <label><input type="radio" name="calidad_vida" value="17">17</label>
-          <label><input type="radio" name="calidad_vida" value="18">18</label>
-          <label><input type="radio" name="calidad_vida" value="19">19</label>
+          <label><input type="radio" name="calidad_vida" value="0">0</label><label><input type="radio" name="calidad_vida" value="1">1</label>
+          <label><input type="radio" name="calidad_vida" value="2">2</label><label><input type="radio" name="calidad_vida" value="3">3</label>
+          <label><input type="radio" name="calidad_vida" value="4">4</label><label><input type="radio" name="calidad_vida" value="5">5</label>
+          <label><input type="radio" name="calidad_vida" value="6">6</label><label><input type="radio" name="calidad_vida" value="7">7</label>
+          <label><input type="radio" name="calidad_vida" value="8">8</label><label><input type="radio" name="calidad_vida" value="9">9</label>
+          <label><input type="radio" name="calidad_vida" value="10">10</label><label><input type="radio" name="calidad_vida" value="11">11</label>
+          <label><input type="radio" name="calidad_vida" value="12">12</label><label><input type="radio" name="calidad_vida" value="13">13</label>
+          <label><input type="radio" name="calidad_vida" value="14">14</label><label><input type="radio" name="calidad_vida" value="15">15</label>
+          <label><input type="radio" name="calidad_vida" value="16">16</label><label><input type="radio" name="calidad_vida" value="17">17</label>
+          <label><input type="radio" name="calidad_vida" value="18">18</label><label><input type="radio" name="calidad_vida" value="19">19</label>
           <label><input type="radio" name="calidad_vida" value="20">20</label>
         </div>
       </div>
-
     </div>
   </div>
 
-  <!-- ══ BOTÓN ENVIAR ══ -->
-  <button type="button" class="btn-enviar" id="btnEnviar" onclick="enviarFormulario()">
-    ✓ &nbsp;Enviar registro
-  </button>
+  <button type="button" class="btn-enviar" id="btnEnviar" onclick="enviarFormulario()">✓ &nbsp;Enviar registro</button>
   <p class="nota">Los datos se envían de forma segura a la base QALAT · UNODC Chile</p>
-
 </form>
 </div>
-
 <div id="toast"></div>
 
 <script>
 const SUPABASE_URL = 'https://jxpomdznhdtfturfafor.supabase.co';
 const SUPABASE_KEY = 'sb_publishable_Id7N23jxKYu7FVyYwHcnOA_UWrYFqmn';
 
-// ── TOGGLES ──────────────────────────────────────────────
-const toggleValues = {
-  hurto:null, robo:null, venta_droga:null,
-  rina_pelea:null, otra_accion:null,
-  vivienda_estable:null, vivienda_basica:null
-};
+const toggleValues = { hurto:null, robo:null, venta_droga:null, rina_pelea:null, otra_accion:null, vivienda_estable:null, vivienda_basica:null };
+
 function setToggle(campo, valor, btn) {
   toggleValues[campo] = valor;
-  const group = btn.closest('.toggle-btn-group');
-  group.querySelectorAll('button').forEach(b => b.classList.remove('activo-si','activo-no'));
+  btn.closest('.toggle-btn-group').querySelectorAll('button').forEach(b => b.classList.remove('activo-si','activo-no'));
   btn.classList.add(valor==='S' ? 'activo-si' : 'activo-no');
 }
-function mostrarOtraAccion(show) {
-  document.getElementById('otra-accion-desc-wrap').style.display = show ? 'flex' : 'none';
-}
+function mostrarOtraAccion(show) { document.getElementById('otra-accion-desc-wrap').style.display = show ? 'flex' : 'none'; }
 
-// ── VALIDACIÓN INPUT NUMÉRICO ────────────────────────────
 function bloquearFueraRango(inp, max=7) {
-  inp.addEventListener('blur', () => {
-    const raw = inp.value.trim();
-    if (raw === '') { inp.classList.remove('inp-error'); actualizarTotal(inp); return; }
-    const v = parseInt(raw);
-    if (isNaN(v) || v < 0 || v > max) {
-      inp.classList.add('inp-error');
-      inp.focus();
-      mostrarToast(`⚠ Valor debe ser entre 0 y ${max}`, true);
-    } else {
-      inp.classList.remove('inp-error');
-    }
+  const check = () => {
+    const raw=inp.value.trim(); if(raw===''){inp.classList.remove('inp-error');actualizarTotal(inp);return;}
+    const v=parseInt(raw);
+    if(isNaN(v)||v<0||v>max){inp.classList.add('inp-error');}else{inp.classList.remove('inp-error');}
     actualizarTotal(inp);
+  };
+  inp.addEventListener('blur', ()=>{
+    const raw=inp.value.trim(); if(raw===''){inp.classList.remove('inp-error');actualizarTotal(inp);return;}
+    const v=parseInt(raw);
+    if(isNaN(v)||v<0||v>max){inp.classList.add('inp-error');inp.focus();mostrarToast(`⚠ Valor debe ser entre 0 y ${max}`,true);}
+    else{inp.classList.remove('inp-error');}actualizarTotal(inp);
   });
-  inp.addEventListener('input', () => {
-    const raw = inp.value.trim();
-    if (raw === '') { inp.classList.remove('inp-error'); actualizarTotal(inp); return; }
-    const v = parseInt(raw);
-    if (isNaN(v) || v < 0 || v > max) {
-      inp.classList.add('inp-error');
-    } else {
-      inp.classList.remove('inp-error');
-    }
-    actualizarTotal(inp);
-  });
+  inp.addEventListener('input', check);
 }
+function actualizarTotal(inp) { if(inp.dataset.sust) calcSustancia(inp.dataset.sust); }
+document.querySelectorAll('table.sustancias input.num-inp').forEach(inp => bloquearFueraRango(inp,7));
 
-function actualizarTotal(inp) {
-  if (inp.dataset.sust) calcSustancia(inp.dataset.sust);
-}
-
-// ── CÁLCULO SUSTANCIAS ───────────────────────────────────
-document.querySelectorAll('table.sustancias input.num-inp').forEach(inp => {
-  bloquearFueraRango(inp, 7);
-});
 function calcSustancia(sust) {
-  let alguno = false;
-  let total = 0;
-  ['s4','s3','s2','s1'].forEach(s => {
-    const el = document.querySelector(`input.${s}[data-sust="${sust}"]`);
-    if (!el || el.value === '') return;
-    alguno = true;
-    if (!el.classList.contains('inp-error')) total += parseInt(el.value) || 0;
+  let alguno=false, total=0;
+  ['s4','s3','s2','s1'].forEach(s=>{
+    const el=document.querySelector(`input.${s}[data-sust="${sust}"]`);
+    if(!el||el.value==='')return; alguno=true;
+    if(!el.classList.contains('inp-error'))total+=parseInt(el.value)||0;
   });
-  const el = document.getElementById(`${sust}_total`);
-  if (el) el.textContent = alguno ? total : '';
+  const el=document.getElementById(`${sust}_total`); if(el)el.textContent=alguno?total:'';
 }
 
-// ── VIF ──────────────────────────────────────────────────
 function calcVif() {
-  let alguno = false; let total = 0;
-  ['vif_s4','vif_s3','vif_s2','vif_s1'].forEach(id => {
-    const el = document.getElementById(id);
-    if (!el || el.value === '') return;
-    alguno = true;
-    if (!el.classList.contains('inp-error')) total += parseInt(el.value)||0;
+  let alguno=false, total=0;
+  ['vif_s4','vif_s3','vif_s2','vif_s1'].forEach(id=>{
+    const el=document.getElementById(id); if(!el||el.value==='')return;
+    alguno=true; if(!el.classList.contains('inp-error'))total+=parseInt(el.value)||0;
   });
-  document.getElementById('vif_total').textContent = alguno ? total : '';
+  document.getElementById('vif_total').textContent=alguno?total:'';
 }
-document.querySelectorAll('#vif_s4,#vif_s3,#vif_s2,#vif_s1').forEach(inp => {
-  inp.removeAttribute('oninput');
-  bloquearFueraRango(inp, 7);
-  inp.addEventListener('input', calcVif);
-  inp.addEventListener('blur', calcVif);
+document.querySelectorAll('#vif_s4,#vif_s3,#vif_s2,#vif_s1').forEach(inp=>{
+  bloquearFueraRango(inp,7); inp.addEventListener('input',calcVif); inp.addEventListener('blur',calcVif);
 });
 
-// ── ACTIVIDADES ──────────────────────────────────────────
 function calcAct(prefix) {
-  let alguno = false; let total = 0;
-  ['s4','s3','s2','s1'].forEach(s => {
-    const el = document.getElementById(`${prefix}_${s}`);
-    if (!el || el.value === '') return;
-    alguno = true;
-    if (!el.classList.contains('inp-error')) total += parseInt(el.value)||0;
+  let alguno=false, total=0;
+  ['s4','s3','s2','s1'].forEach(s=>{
+    const el=document.getElementById(`${prefix}_${s}`); if(!el||el.value==='')return;
+    alguno=true; if(!el.classList.contains('inp-error'))total+=parseInt(el.value)||0;
   });
-  const totalEl = document.getElementById(`${prefix}_total`);
-  if (totalEl) totalEl.textContent = alguno ? total : '';
+  const totalEl=document.getElementById(`${prefix}_total`); if(totalEl)totalEl.textContent=alguno?total:'';
 }
-['dias_trabajo','dias_educacion','dias_otras'].forEach(prefix => {
-  ['s4','s3','s2','s1'].forEach(s => {
-    const el = document.getElementById(`${prefix}_${s}`);
-    if (!el) return;
-    el.removeAttribute('oninput');
-    bloquearFueraRango(el, 7);
-    el.addEventListener('input', () => calcAct(prefix));
-    el.addEventListener('blur',  () => calcAct(prefix));
+['dias_trabajo','dias_educacion'].forEach(prefix=>{
+  ['s4','s3','s2','s1'].forEach(s=>{
+    const el=document.getElementById(`${prefix}_${s}`); if(!el)return;
+    bloquearFueraRango(el,7);
+    el.addEventListener('input',()=>calcAct(prefix)); el.addEventListener('blur',()=>calcAct(prefix));
   });
 });
 
-// ── VALIDACIÓN CÓDIGO PACIENTE ────────────────────────────
-const codigoInp = document.getElementById('codigo_paciente');
-codigoInp.addEventListener('input', () => {
-  const pos = codigoInp.selectionStart;
-  codigoInp.value = codigoInp.value.toUpperCase();
-  codigoInp.setSelectionRange(pos, pos);
-});
-codigoInp.addEventListener('blur', () => {
-  const val = codigoInp.value.trim();
-  const patron = /^[A-ZÁÉÍÓÚÑ]{4}\d{8}$/;
-  if (val && !patron.test(val)) {
-    codigoInp.classList.add('error');
-    mostrarToast('⚠ Código incorrecto. Debe ser 4 letras + 8 números. Ej: ROPE15031985', true);
-  } else {
-    codigoInp.classList.remove('error');
-  }
+const codigoInp=document.getElementById('codigo_paciente');
+codigoInp.addEventListener('input',()=>{ const pos=codigoInp.selectionStart; codigoInp.value=codigoInp.value.toUpperCase(); codigoInp.setSelectionRange(pos,pos); });
+codigoInp.addEventListener('blur',()=>{
+  const val=codigoInp.value.trim();
+  if(val&&!/^[A-ZÁÉÍÓÚÑ]{4}\d{8}$/.test(val)){codigoInp.classList.add('error');mostrarToast('⚠ Código incorrecto. Debe ser 4 letras + 8 números. Ej: ROPE15031985',true);}
+  else codigoInp.classList.remove('error');
 });
 
-// ── VALIDACIÓN FECHAS ──────────────────────────────────────
 function validarFechas() {
-  let errores = [];
-  const hoy = new Date(); hoy.setHours(0,0,0,0);
-  const MIN_FECHA = new Date('2020-01-01');
-  const fechaEntrevistaEl = document.getElementById('fecha_entrevista');
-  const fechaNacimientoEl = document.getElementById('fecha_nacimiento');
-  if (fechaEntrevistaEl.value) {
-    const fe = new Date(fechaEntrevistaEl.value);
-    if (fe > hoy) {
-      fechaEntrevistaEl.classList.add('error');
-      errores.push('La fecha de entrevista no puede ser futura.');
-    } else if (fe < MIN_FECHA) {
-      fechaEntrevistaEl.classList.add('error');
-      errores.push('La fecha de entrevista no puede ser anterior a 2020.');
-    } else {
-      fechaEntrevistaEl.classList.remove('error');
-    }
-  }
-  if (fechaNacimientoEl.value) {
-    const fn = new Date(fechaNacimientoEl.value);
-    const edadAnios = (hoy - fn) / (1000 * 60 * 60 * 24 * 365.25);
-    if (edadAnios < 5) {
-      fechaNacimientoEl.classList.add('error');
-      errores.push('La edad mínima del paciente es 5 años.');
-    } else if (edadAnios > 100) {
-      fechaNacimientoEl.classList.add('error');
-      errores.push('La edad máxima del paciente es 100 años.');
-    } else {
-      fechaNacimientoEl.classList.remove('error');
-      if (fechaEntrevistaEl.value) {
-        const fe = new Date(fechaEntrevistaEl.value);
-        if (fn >= fe) {
-          fechaNacimientoEl.classList.add('error');
-          errores.push('La fecha de nacimiento debe ser anterior a la fecha de entrevista.');
-        }
-      }
-    }
+  let errores=[]; const hoy=new Date(); hoy.setHours(0,0,0,0); const MIN=new Date('2020-01-01');
+  const feEl=document.getElementById('fecha_entrevista'); const fnEl=document.getElementById('fecha_nacimiento');
+  if(feEl.value){const fe=new Date(feEl.value); if(fe>hoy){feEl.classList.add('error');errores.push('La fecha de entrevista no puede ser futura.');}else if(fe<MIN){feEl.classList.add('error');errores.push('La fecha de entrevista no puede ser anterior a 2020.');}else feEl.classList.remove('error');}
+  if(fnEl.value){const fn=new Date(fnEl.value);const edad=(hoy-fn)/(1000*60*60*24*365.25);
+    if(edad<5){fnEl.classList.add('error');errores.push('La edad mínima del paciente es 5 años.');}
+    else if(edad>100){fnEl.classList.add('error');errores.push('La edad máxima del paciente es 100 años.');}
+    else{fnEl.classList.remove('error');if(feEl.value){const fe=new Date(feEl.value);if(fn>=fe){fnEl.classList.add('error');errores.push('La fecha de nacimiento debe ser anterior a la fecha de entrevista.');}}}
   }
   return errores;
 }
-document.getElementById('fecha_entrevista').addEventListener('change', validarFechas);
-document.getElementById('fecha_nacimiento').addEventListener('change', validarFechas);
+document.getElementById('fecha_entrevista').addEventListener('change',validarFechas);
+document.getElementById('fecha_nacimiento').addEventListener('change',validarFechas);
 
-// ── TOAST ────────────────────────────────────────────────
-function mostrarToast(msg, esError=false) {
-  const t = document.getElementById('toast');
-  t.textContent = msg;
-  t.className = esError ? 'error-toast' : '';
-  t.style.display = 'block';
-  setTimeout(()=>{ t.style.display='none'; }, 5000);
+function mostrarToast(msg,esError=false) {
+  const t=document.getElementById('toast'); t.textContent=msg;
+  t.className=esError?'error-toast':''; t.style.display='block';
+  setTimeout(()=>{t.style.display='none';},5000);
 }
 
-// ── ENVÍO ────────────────────────────────────────────────
 async function enviarFormulario() {
-  let ok = true;
-  let errMsg = [];
-
+  let ok=true, errMsg=[];
   ['centro','etapa','codigo_paciente','fecha_entrevista','sustancia_principal'].forEach(id=>{
-    const el=document.getElementById(id);
-    if(!el.value){el.classList.add('error');ok=false;}
-    else el.classList.remove('error');
+    const el=document.getElementById(id); if(!el.value){el.classList.add('error');ok=false;}else el.classList.remove('error');
   });
-
-  const codVal = document.getElementById('codigo_paciente').value.trim();
-  const codPatron = /^[A-ZÁÉÍÓÚÑ]{4}\d{8}$/;
-  if (codVal && !codPatron.test(codVal)) {
-    document.getElementById('codigo_paciente').classList.add('error');
-    ok = false;
-    errMsg.push('Código de paciente con formato incorrecto');
-  }
-
-  if(!document.querySelector('input[name="salud_mental"]:checked')){ok=false;errMsg.push('Salud mental');}
+  const codVal=document.getElementById('codigo_paciente').value.trim();
+  if(codVal&&!/^[A-ZÁÉÍÓÚÑ]{4}\d{8}$/.test(codVal)){document.getElementById('codigo_paciente').classList.add('error');ok=false;errMsg.push('Código de paciente con formato incorrecto');}
+  if(!document.querySelector('input[name="salud_psicologica"]:checked')){ok=false;errMsg.push('Salud psicológica');}
   if(!document.querySelector('input[name="salud_fisica"]:checked')){ok=false;errMsg.push('Salud física');}
   if(!document.querySelector('input[name="calidad_vida"]:checked')){ok=false;errMsg.push('Calidad de vida');}
+  if(document.querySelectorAll('.inp-error').length>0){ok=false;errMsg.push('Hay valores fuera de rango (0–7)');}
+  const errFechas=validarFechas(); if(errFechas.length>0){ok=false;errMsg=errMsg.concat(errFechas);}
+  if(!ok){mostrarToast('⚠ '+(errMsg.length?errMsg[0]:'Complete los campos obligatorios (*)'),true);return;}
 
-  if (document.querySelectorAll('.inp-error').length > 0) {
-    ok=false; errMsg.push('Hay valores fuera de rango (0–7)');
-  }
+  const btn=document.getElementById('btnEnviar'); btn.disabled=true; btn.textContent='Enviando…';
+  const n=id=>{const v=parseFloat(document.getElementById(id)?.value);return isNaN(v)?null:v;};
+  const s=id=>document.getElementById(id)?.value||null;
+  const sv=(sust,sem)=>{const el=document.querySelector(`input.${sem}[data-sust="${sust}"]`);return(el&&el.value!==''&&!el.classList.contains('inp-error'))?parseInt(el.value):null;};
+  const tv=id=>{const el=document.getElementById(id);return el?parseInt(el.textContent)||null:null;};
+  const pv=id=>{const el=document.getElementById(id);return el&&el.value!==''?parseFloat(el.value):null;};
 
-  const errFechas = validarFechas();
-  if (errFechas.length > 0) { ok=false; errMsg = errMsg.concat(errFechas); }
-
-  if(!ok){
-    mostrarToast('⚠ ' + (errMsg.length ? errMsg[0] : 'Complete los campos obligatorios (*)'), true);
-    return;
-  }
-
-  const btn=document.getElementById('btnEnviar');
-  btn.disabled=true; btn.textContent='Enviando…';
-
-  const n = id => { const v=parseFloat(document.getElementById(id)?.value); return isNaN(v)?null:v; };
-  const s = id => document.getElementById(id)?.value||null;
-  const sv = (sust,sem) => {
-    const el=document.querySelector(`input.${sem}[data-sust="${sust}"]`);
-    return (el && el.value!=='' && !el.classList.contains('inp-error')) ? parseInt(el.value) : null;
-  };
-  const tv = id => { const el=document.getElementById(id); return el?parseInt(el.textContent)||null:null; };
-  const pv = id => { const el=document.getElementById(id); return el&&el.value!==''?parseFloat(el.value):null; };
-
-  const payload = {
-    pais: 'Ecuador',
-    centro: s('centro'),
-    etapa: s('etapa'),
-    codigo_paciente: s('codigo_paciente'),
-    fecha_entrevista: s('fecha_entrevista'),
-    fecha_nacimiento: s('fecha_nacimiento')||null,
-    sexo: s('sexo')||null,
-    nombre_entrevistador: s('nombre_entrevistador')||null,
-
-    // Sustancias
-    alcohol_s4:sv('alcohol','s4'), alcohol_s3:sv('alcohol','s3'),
-    alcohol_s2:sv('alcohol','s2'), alcohol_s1:sv('alcohol','s1'),
-    alcohol_total:tv('alcohol_total'), alcohol_prom:pv('alcohol_prom'),
-
-    marihuana_s4:sv('marihuana','s4'), marihuana_s3:sv('marihuana','s3'),
-    marihuana_s2:sv('marihuana','s2'), marihuana_s1:sv('marihuana','s1'),
-    marihuana_total:tv('marihuana_total'), marihuana_prom:pv('marihuana_prom'),
-
-    pastabase_s4:sv('pastabase','s4'), pastabase_s3:sv('pastabase','s3'),
-    pastabase_s2:sv('pastabase','s2'), pastabase_s1:sv('pastabase','s1'),
-    pastabase_total:tv('pastabase_total'), pastabase_prom:pv('pastabase_prom'),
-
-    cocaina_s4:sv('cocaina','s4'), cocaina_s3:sv('cocaina','s3'),
-    cocaina_s2:sv('cocaina','s2'), cocaina_s1:sv('cocaina','s1'),
-    cocaina_total:tv('cocaina_total'), cocaina_prom:pv('cocaina_prom'),
-
-    sedantes_s4:sv('sedantes','s4'), sedantes_s3:sv('sedantes','s3'),
-    sedantes_s2:sv('sedantes','s2'), sedantes_s1:sv('sedantes','s1'),
-    sedantes_total:tv('sedantes_total'), sedantes_prom:pv('sedantes_prom'),
-
-    heroina_s4:sv('heroina','s4'), heroina_s3:sv('heroina','s3'),
-    heroina_s2:sv('heroina','s2'), heroina_s1:sv('heroina','s1'),
-    heroina_total:tv('heroina_total'), heroina_prom:pv('heroina_prom'),
-
-    otra_sust_nombre: s('otra_sust_nombre')||null,
-    otra_sust_unidad: s('otra_sust_unidad')||null,
-    otra_sust_s4:sv('otra_sust','s4'), otra_sust_s3:sv('otra_sust','s3'),
-    otra_sust_s2:sv('otra_sust','s2'), otra_sust_s1:sv('otra_sust','s1'),
-    otra_sust_total:tv('otra_sust_total'), otra_sust_prom:pv('otra_sust_prom'),
-
-    sustancia_principal: s('sustancia_principal'),
-
-    // Transgresión
-    hurto:toggleValues.hurto, robo:toggleValues.robo,
-    venta_droga:toggleValues.venta_droga, rina_pelea:toggleValues.rina_pelea,
-    otra_accion:toggleValues.otra_accion,
-    otra_accion_desc: s('otra_accion_desc')||null,
-    vif_s4:n('vif_s4'), vif_s3:n('vif_s3'), vif_s2:n('vif_s2'), vif_s1:n('vif_s1'),
-    vif_total:tv('vif_total'),
-
-    // Sección 3 — nombres de columna Ecuador
-    salud_mental: parseInt(document.querySelector('input[name="salud_mental"]:checked')?.value),
-    dias_trabajo_s4:n('dias_trabajo_s4'), dias_trabajo_s3:n('dias_trabajo_s3'),
-    dias_trabajo_s2:n('dias_trabajo_s2'), dias_trabajo_s1:n('dias_trabajo_s1'),
-    dias_trabajo_total:tv('dias_trabajo_total'),
-    dias_educacion_s4:n('dias_educacion_s4'), dias_educacion_s3:n('dias_educacion_s3'),
-    dias_educacion_s2:n('dias_educacion_s2'), dias_educacion_s1:n('dias_educacion_s1'),
-    dias_educacion_total:tv('dias_educacion_total'),
-    dias_otras_s4:n('dias_otras_s4'), dias_otras_s3:n('dias_otras_s3'),
-    dias_otras_s2:n('dias_otras_s2'), dias_otras_s1:n('dias_otras_s1'),
-    dias_otras_total:tv('dias_otras_total'),
-    salud_fisica: parseInt(document.querySelector('input[name="salud_fisica"]:checked')?.value),
-    vivienda_estable:toggleValues.vivienda_estable,
-    vivienda_basica:toggleValues.vivienda_basica,
-    calidad_vida: parseInt(document.querySelector('input[name="calidad_vida"]:checked')?.value)
+  const payload={
+    pais:'México', centro:s('centro'), etapa:s('etapa'),
+    codigo_paciente:s('codigo_paciente'), fecha_entrevista:s('fecha_entrevista'),
+    fecha_nacimiento:s('fecha_nacimiento')||null, sexo:s('sexo')||null,
+    nombre_entrevistador:s('nombre_entrevistador')||null,
+    alcohol_s4:sv('alcohol','s4'),alcohol_s3:sv('alcohol','s3'),alcohol_s2:sv('alcohol','s2'),alcohol_s1:sv('alcohol','s1'),alcohol_total:tv('alcohol_total'),alcohol_prom:pv('alcohol_prom'),
+    marihuana_s4:sv('marihuana','s4'),marihuana_s3:sv('marihuana','s3'),marihuana_s2:sv('marihuana','s2'),marihuana_s1:sv('marihuana','s1'),marihuana_total:tv('marihuana_total'),marihuana_prom:pv('marihuana_prom'),
+    metanfetamina_s4:sv('metanfetamina','s4'),metanfetamina_s3:sv('metanfetamina','s3'),metanfetamina_s2:sv('metanfetamina','s2'),metanfetamina_s1:sv('metanfetamina','s1'),metanfetamina_total:tv('metanfetamina_total'),metanfetamina_prom:pv('metanfetamina_prom'),
+    cocaina_s4:sv('cocaina','s4'),cocaina_s3:sv('cocaina','s3'),cocaina_s2:sv('cocaina','s2'),cocaina_s1:sv('cocaina','s1'),cocaina_total:tv('cocaina_total'),cocaina_prom:pv('cocaina_prom'),
+    sedantes_s4:sv('sedantes','s4'),sedantes_s3:sv('sedantes','s3'),sedantes_s2:sv('sedantes','s2'),sedantes_s1:sv('sedantes','s1'),sedantes_total:tv('sedantes_total'),sedantes_prom:pv('sedantes_prom'),
+    otra_sust_nombre:s('otra_sust_nombre')||null,
+    otra_sust_s4:sv('otra_sust','s4'),otra_sust_s3:sv('otra_sust','s3'),otra_sust_s2:sv('otra_sust','s2'),otra_sust_s1:sv('otra_sust','s1'),otra_sust_total:tv('otra_sust_total'),otra_sust_prom:pv('otra_sust_prom'),
+    sustancia_principal:s('sustancia_principal'),
+    hurto:toggleValues.hurto,robo:toggleValues.robo,venta_droga:toggleValues.venta_droga,rina_pelea:toggleValues.rina_pelea,
+    otra_accion:toggleValues.otra_accion,otra_accion_desc:s('otra_accion_desc')||null,
+    vif_s4:n('vif_s4'),vif_s3:n('vif_s3'),vif_s2:n('vif_s2'),vif_s1:n('vif_s1'),vif_total:tv('vif_total'),
+    salud_psicologica:parseInt(document.querySelector('input[name="salud_psicologica"]:checked')?.value),
+    dias_trabajo_s4:n('dias_trabajo_s4'),dias_trabajo_s3:n('dias_trabajo_s3'),dias_trabajo_s2:n('dias_trabajo_s2'),dias_trabajo_s1:n('dias_trabajo_s1'),dias_trabajo_total:tv('dias_trabajo_total'),
+    dias_educacion_s4:n('dias_educacion_s4'),dias_educacion_s3:n('dias_educacion_s3'),dias_educacion_s2:n('dias_educacion_s2'),dias_educacion_s1:n('dias_educacion_s1'),dias_educacion_total:tv('dias_educacion_total'),
+    salud_fisica:parseInt(document.querySelector('input[name="salud_fisica"]:checked')?.value),
+    vivienda_estable:toggleValues.vivienda_estable,vivienda_basica:toggleValues.vivienda_basica,
+    calidad_vida:parseInt(document.querySelector('input[name="calidad_vida"]:checked')?.value)
   };
 
   try {
-    const resp = await fetch(`${SUPABASE_URL}/rest/v1/top_registros`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'apikey': SUPABASE_KEY,
-        'Authorization': `Bearer ${SUPABASE_KEY}`,
-        'Prefer': 'return=minimal'
-      },
-      body: JSON.stringify(payload)
+    const resp=await fetch(`${SUPABASE_URL}/rest/v1/top_registros`,{
+      method:'POST',
+      headers:{'Content-Type':'application/json','apikey':SUPABASE_KEY,'Authorization':`Bearer ${SUPABASE_KEY}`,'Prefer':'return=minimal'},
+      body:JSON.stringify(payload)
     });
-    if(resp.ok || resp.status===201){
+    if(resp.ok||resp.status===201){
       mostrarToast('✓ Registro enviado correctamente');
       document.getElementById('formTop').reset();
       Object.keys(toggleValues).forEach(k=>toggleValues[k]=null);
@@ -1099,12 +652,9 @@ async function enviarFormulario() {
       document.getElementById('otra-accion-desc-wrap').style.display='none';
       document.querySelectorAll('.inp-error').forEach(el=>el.classList.remove('inp-error'));
     } else {
-      const err = await resp.json();
-      mostrarToast('Error al enviar: '+(err.message||resp.status), true);
+      const err=await resp.json(); mostrarToast('Error al enviar: '+(err.message||resp.status),true);
     }
-  } catch(e){
-    mostrarToast('Error de conexión. Verifique su internet.', true);
-  }
+  } catch(e){ mostrarToast('Error de conexión. Verifique su internet.',true); }
   btn.disabled=false; btn.textContent='✓ Enviar registro';
 }
 </script>
