@@ -227,6 +227,13 @@ def _migrar_excel_jotform(df, pais):
 
     def _limpiar_fecha(val):
         if pd.isna(val): return None
+        # Número serial de Excel (ej: 26904)
+        try:
+            num = float(val)
+            if num > 1000:
+                fecha = pd.Timestamp('1899-12-30') + pd.Timedelta(days=int(num))
+                return fecha.strftime('%Y-%m-%d')
+        except: pass
         val = str(val).strip()
         meses = {'ene':'01','feb':'02','mar':'03','abr':'04','may':'05','jun':'06',
                  'jul':'07','ago':'08','sep':'09','oct':'10','nov':'11','dic':'12'}
@@ -236,7 +243,11 @@ def _migrar_excel_jotform(df, pais):
                 mes = meses.get(parts[0].lower(), parts[0])
                 return f"{parts[2]}-{mes}-{parts[1].zfill(2)}"
             except: pass
-        return val
+        # Intentar parseo directo
+        try:
+            return pd.to_datetime(val).strftime('%Y-%m-%d')
+        except: pass
+        return None
 
     def _bool(val):
         if pd.isna(val): return None
@@ -249,9 +260,11 @@ def _migrar_excel_jotform(df, pais):
         if 'seguimiento' in v or 'top2' in v: return 'TOP2'
         return str(val).strip()
 
-    def _num(val):
+    def _num(val, max_val=9999):
         if pd.isna(val): return None
-        try: return float(val)
+        try:
+            v = float(val)
+            return min(v, max_val)
         except: return None
 
     def _int(val):
