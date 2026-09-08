@@ -1,9 +1,12 @@
-streamlit>=1.32.0
-pandas>=2.0.0
-numpy>=1.24.0
-openpyxl>=3.1.0
-matplotlib>=3.7.0
-xlrd>=2.0.0
-python-docx>=1.1.0
-python-pptx>=0.6.21
-plotly>=5.18.0
+# Versiones acotadas por major. Verificado funcionando en Streamlit Cloud
+# el 8 de septiembre de 2026 (Python 3.14, instalador uv).
+# Subir un tope de major solo despues de probar el despliegue.
+streamlit>=1.63,<2
+pandas>=3.0,<4
+numpy>=2.5,<3
+matplotlib>=3.11,<4
+plotly>=7.0,<8
+openpyxl>=3.1,<4
+xlrd>=2.0,<3
+python-docx>=1.2,<2
+python-pptx>=1.0,<2
